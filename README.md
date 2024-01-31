@@ -27,8 +27,6 @@ The Customer Management Service leverages the following technologies:
    ```
    The application will start on [http://localhost:8080](http://localhost:8080).
 
-3. **Explore API Documentation:**
-   Open [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) to interact with the APIs using Swagger.
 
 ## API Documentation
 
