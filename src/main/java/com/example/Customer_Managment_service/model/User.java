@@ -1,17 +1,14 @@
 package com.example.Customer_Managment_service.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Generated;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Getter@Setter@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "app_user")
-public class User {
+public class User extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

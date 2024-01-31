@@ -2,15 +2,14 @@ package com.example.Customer_Managment_service.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
 import java.util.UUID;
 
-@Data
+@Getter@Setter@ToString
 @Entity
 @AllArgsConstructor
-public class Customer {
+public class Customer extends BaseEntity{
     @Id
     private String uuid;
     private String firstName;
