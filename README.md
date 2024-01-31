@@ -16,7 +16,7 @@ The Customer Management Service leverages the following technologies:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/customer-management-service.git
+   git clone https://github.com/arjunagi-a-rehman/customer_management_service.git
    cd customer-management-service
    ```
 
