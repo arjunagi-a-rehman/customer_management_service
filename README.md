@@ -30,8 +30,6 @@ The Customer Management Service leverages the following technologies:
 
 ## API Documentation
 
-The provided code snippets are from a Spring Boot application related to customer management and user authentication. Below is a brief overview and analysis of the code:
-
 ## CustomerController
 
 1. **Create Customer:**
