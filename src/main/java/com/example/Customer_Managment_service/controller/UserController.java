@@ -4,6 +4,7 @@ import com.example.Customer_Managment_service.dto.UserDto;
 import com.example.Customer_Managment_service.dto.UserLoginDto;
 import com.example.Customer_Managment_service.sevice.JwtService;
 import com.example.Customer_Managment_service.sevice.UserServices;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -26,9 +27,13 @@ public class UserController {
     @Autowired
     private JwtService jwtService;
     @PostMapping("/register")
-    public ResponseEntity<String> registerUser(@RequestBody UserDto userDto){
+    public ResponseEntity<String> registerUser(@RequestBody @Valid UserDto userDto){
         userServices.registerUser(userDto);
         return new ResponseEntity<>("created user", HttpStatus.CREATED);
+    }
+    @GetMapping("/check/login")
+    public ResponseEntity<String> checkLogin(){
+        return ResponseEntity.ok("is logged in");
     }
     @PostMapping("/generate")
     public String authenticateAndGetToken(@RequestBody UserLoginDto authRequest) {

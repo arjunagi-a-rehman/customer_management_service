@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
 import java.util.Optional;
 
 @Service
@@ -26,6 +27,7 @@ public class UserServices {
     public void registerUser(UserDto userDto) {
         User user= UserMapper.UserDtoToUser(userDto,new User());
         user.setPassword(encoder.encode(user.getPassword()));
+        if(userRepo.findByEmail(user.getEmail()).isPresent())throw new RuntimeException("email "+user.getEmail()+" already exist");
         userRepo.save(user);
     }
 
