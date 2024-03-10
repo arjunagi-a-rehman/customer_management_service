@@ -3,6 +3,8 @@ package com.example.Customer_Managment_service.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Getter@Setter@ToString
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,4 +19,6 @@ public class User extends BaseEntity{
     private String email;
     private String password;
     private String role;
+    @OneToMany(mappedBy = "user")
+    private List<Items> itemsList;
 }
